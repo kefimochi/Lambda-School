@@ -108,10 +108,6 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
 blockquote,
 q {
   quotes: none;
@@ -137,6 +133,9 @@ html,
 body {
   height: 100%;
   font-family: "Titillium Web", sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  /* opacity: 0.5; */
 }
 
 h1,
@@ -149,7 +148,17 @@ h5 {
   margin-bottom: 15px;
 }
 
-/* Your code starts here! */
+.main-img {
+  background-image: url("../img/cacti.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+}
 
 nav {
   top: 0;
@@ -161,6 +170,7 @@ nav {
   box-sizing: border-box;
   position: fixed;
   margin-bottom: 2em;
+  z-index: 5;
 }
 
 .logo {
@@ -180,99 +190,77 @@ nav a:hover {
   color: #9fe0ac;
 }
 
-.main {
-  margin: 0 15em;
-}
-
-.first-section {
-  margin: 8em 0;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  justify-content: space-between;
-}
-
-#main-title {
-  padding-top: 0.5em;
-  font-size: 5em;
-  margin-bottom: 0.5em;
-  text-shadow: 5px 0 0 #9fe0ac;
-  letter-spacing: 0.2em;
-}
-
-.button {
-  border: 2px solid black;
-  color: black;
-  text-decoration: none;
-  padding: 0.7em 8em;
-}
-
-.button:hover {
-  border: 2px solid;
-  color: white;
-  background-color: #9fe0ac;
-}
-
-#inner-div {
-  width: 50%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.first-section img {
-  box-shadow: 0 15px 40px 15px rgba(0, 0, 0, 0.35);
-  border-radius: 50%;
-  border: 5px solid #9fe0ac;
-}
-
 hr {
   border: 2px solid #9fe0ac;
 }
 
-.main section {
-  height: 50%;
-  width: 100%;
+#intro-sec {
+  margin: 2em 0;
   text-align: center;
-  line-height: 1.5em;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
-
-section div {
-  margin: 2em 0.5em;
-  min-width: 15%;
+#intro-sec p {
+  margin: 2em 0 0 0;
+  padding: 0 4em;
+  line-height: 2em;
 }
 
 .page-title {
-  font-size: 2em;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
 }
 
-.sub-title {
-  font-size: 1.5em;
-  font-family: "DM Serif Display", serif;
+.main {
+  margin: 0 15em;
 }
 
-.image {
+.box {
+  text-align: center;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  margin: 1em 1.5em;
+  padding: 1em;
+  max-width: 40%;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 1em;
+}
+
+.box:hover {
+  -webkit-transform: scale(1.15, 1.15);
+  transform: scale(1.05, 1.05);
+  opacity: 1;
+}
+
+.people {
   display: flex;
-  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1em;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+}
+
+.name {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.2em;
+  margin: 0.5em;
+}
+
+.person-pic {
   height: auto;
+  max-width: 9em;
+  border-radius: 100em;
+}
+
+.profile-img {
+  max-height: 20em;
+  width: auto;
+  border-radius: 100em;
 }
 
 footer {
-  line-height: 1.5em;
-}
-
-#Copyright {
   text-align: center;
-  margin: 1em;
-}
-
-#phone {
-  line-height: 2.5em;
+  margin: 2em;
 }
