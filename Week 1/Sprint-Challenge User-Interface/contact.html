@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Sprint Challenge - About</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Rubik"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+
+  <body>
+    <nav class="top-nav">
+      <a href="index.html"
+        ><img
+          class="logo"
+          src="img/lambda-black.png"
+          alt="Great Idea! Company logo."
+      /></a>
+      <a href="index.html" id="home">Home</a>
+      <a href="about.html">About</a>
+      <a href="#products">Products</a>
+      <a href="#features">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="about-page">
+      <div class="container">
+        <img class="picture" src="img/macbook.jpg" alt="Macbook picture" />
+        <div class="inner-container">
+          <h1 class="title">Contact Us</h1>
+          <form id="form" method="post" action="/" onsubmit="validateForm()">
+            <p>
+              <input required type="text" name="name" placeholder="Full Name" />
+              <input required type="text" name="email" placeholder="Email" />
+            </p>
+            <p>
+              <textarea
+                required
+                name="message"
+                rows="5"
+                placeholder="Message"
+              ></textarea>
+            </p>
+
+            <p>
+              <input type="submit" name="submit" value="SUBMIT" id="submit" />
+            </p>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Products</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </nav>
+      </footer>
+    </div>
+    <!-- container -->
+  </body>
+</html>
