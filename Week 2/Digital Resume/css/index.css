@@ -230,9 +230,14 @@ header img {
   color: white;
   font-family: "Great Vibes", cursive;
 }
-@media (max-width: 434px) {
+@media (max-width: 500px) {
   .header-container h1 {
     font-size: 3.5em;
+  }
+}
+@media (max-width: 296px) {
+  .header-container h1 {
+    font-size: 2.5em;
   }
 }
 .header-container h3 {
@@ -262,14 +267,13 @@ header img {
   text-align: center;
   padding: 5em;
   justify-content: space-around;
-  background-color: #f7f7f7;
   height: auto;
   width: 100%;
 }
 .container .left {
+  background-color: #f7f7f7;
   width: 45%;
   height: 100vh;
-  background-color: #5f0505;
 }
 @media (max-width: 701px) {
   .container .left {
@@ -277,9 +281,9 @@ header img {
   }
 }
 .container .right {
+  background-color: #f7f7f7;
   width: 45%;
   height: 100vh;
-  background-color: #d28f7f;
 }
 @media (max-width: 701px) {
   .container .right {
@@ -295,4 +299,17 @@ header img {
   .container {
     flex-direction: column;
   }
+}
+footer {
+  background-color: #d28f7f;
+  height: 4em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  letter-spacing: 0.2em;
+  color: #f7f7f7;
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);
 }
