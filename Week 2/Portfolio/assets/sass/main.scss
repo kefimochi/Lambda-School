@@ -313,6 +313,7 @@
 		&.avatar48 {
 			width: 6em;
 			height: 6em;
+			opacity: 0.9;
 
 			img {
 				border-radius: 7em;
@@ -707,7 +708,7 @@
 	#footer {
 		margin-left: 375px;
 		text-align: center;
-		background-color: #dce3e2;
+		background-color: #F2DCD3;
 		padding: 3em 0 4em 0;
 		box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
 		font-size: 0.8em;
@@ -736,6 +737,7 @@
 
 	#main {
 		margin-left: 375px;
+		background-color: #F2E5E0;
 
 		> section {
 			margin: 0;
@@ -773,7 +775,7 @@
 				height: 85vh;
 				background-position: center center;
 				clip-path: polygon(47% 0, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
-				background-color: #f5fafa;
+				background-color: #F2E5E0;
 				background-image: url('images/overlay.png');
 			}
 
@@ -783,18 +785,20 @@
 				background-attachment: fixed;
 				background-position: top left, top right, bottom left, bottom right;
 				background-repeat: no-repeat;
+				box-shadow: none;
 			}
 
 			&.two {
-				background-color: #f5fafa;
+				background-color: #F2E5E0;
+				box-shadow: none;
 			}
 
 			&.three {
-				background-color: #ecf1f1;
+				background-color: #F2E5E0;
 			}
 
 			&.four {
-				background-color: #e8edec;
+				background-color: #F2E5E0;
 			}
 		}
 	}
@@ -956,6 +960,16 @@
 				padding: 0 2em 0 2em;
 			}
 
+/* First section */
+#main {
+
+	> section {
+		&.cover {
+			min-height: 20em;
+		}
+	}
+}
+
 		/* Item */
 
 			.item {
@@ -1020,7 +1034,7 @@
 				@include vendor('backface-visibility', 'hidden');
 				@include vendor('transition', 'transform #{_duration(header)} ease');
 				display: block;
-				height: 2.25em;
+				height: 3.25em;
 				left: 0;
 				position: fixed;
 				top: 0;
@@ -1046,11 +1060,14 @@
 						border-radius: 0.35em;
 						text-align: center;
 						position: absolute;
+						border-radius: 10000em;
 						left: 0.5em;
+						margin: 0.5em 1em;
+						padding-top: 0.45em;
 						top: 0.5em;
 						display: block;
 						width: 3.25em;
-						height: 2.25em;
+						height: 3.25em;
 						line-height: 2.25em;
 					}
 				}
@@ -1118,6 +1135,16 @@
 			.container {
 				padding: 0 15px 0 15px;
 			}
+
+		/* First section */
+		#main {
+
+			> section {
+				&.cover {
+					min-height: 33em;
+				}
+			}
+		}
 
 		/* List */
 
