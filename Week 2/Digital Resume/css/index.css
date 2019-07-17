@@ -107,10 +107,6 @@ section {
 body {
   line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
-}
 blockquote,
 q {
   quotes: none;
@@ -163,6 +159,7 @@ nav .links {
   display: flex;
   justify-content: space-evenly;
   width: 70%;
+  list-style: none;
   height: 3em;
   align-items: center;
   flex-wrap: wrap;
@@ -268,25 +265,54 @@ header img {
   padding: 5em;
   justify-content: space-around;
   height: auto;
+  line-height: 2.2em;
   width: 100%;
+  color: #5f0505;
 }
 .container .left {
+  border-top: 5px solid #d2907f73;
   background-color: #f7f7f7;
   width: 45%;
   height: 100vh;
+  padding: 3em 5em;
 }
-@media (max-width: 701px) {
+.container .left section ul {
+  text-align: left;
+  padding: 1em 0;
+}
+.container .left #contact ul li {
+  list-style: none;
+}
+.container .left #skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 931px) {
   .container .left {
     width: 90%;
   }
 }
+@media (max-width: 500px) {
+  .container .left {
+    padding: 5em 2em;
+  }
+}
 .container .right {
+  border-top: 5px solid #d2907f73;
   background-color: #f7f7f7;
   width: 45%;
   height: 100vh;
+  padding: 3em 5em;
 }
-@media (max-width: 701px) {
+.container .right section ul {
+  text-align: left;
+  padding: 1em 0;
+}
+@media (max-width: 931px) {
   .container .right {
+    flex-direction: column;
     width: 90%;
   }
 }
@@ -295,10 +321,16 @@ header img {
     padding: 5em 0;
   }
 }
-@media (max-width: 701px) {
+@media (max-width: 931px) {
   .container {
     flex-direction: column;
   }
+}
+.sect-title {
+  font-size: 1.3em;
+  font-family: "Open Sans Condensed", sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 footer {
   background-color: #d28f7f;
