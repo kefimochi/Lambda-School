@@ -1,0 +1,23 @@
+.displayFlex(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.styleButton(@color : black) {
+  border: 2px solid @color;
+  color: @color;
+  text-decoration: none;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.hoverButton(@color : black) {
+  border: 2px solid @color;
+  color: white;
+  background-color: @color;
+}
+
+.slowerAnimation(@secs) {
+  transition: all @secs ease-in-out;
+}
