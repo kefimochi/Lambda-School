@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  height: 10em;
+  .displayFlex(space-evenly, center);
+  position: fixed;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: @ebony-clay;
+
+  #logo {
+    font-family: "Russo One", sans-serif;
+    color: @wild-sand;
+    text-decoration: none;
+    font-size: 3em;
+
+    @media @phone {
+      margin: 0;
+    }
+  }
+}
+
+.links {
+  .displayFlex(space-around, center);
+  width: 50%;
+  height: 3em;
+  // background-color: @mid-sand;
+  .slowerAnimation(0.2s);
+
+  @media @phone {
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
