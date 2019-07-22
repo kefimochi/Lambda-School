@@ -277,6 +277,9 @@ header img {
   padding: 3em 5em;
   padding-bottom: 0;
 }
+.container .left #intro {
+  line-height: 1.9em;
+}
 .container .left section ul {
   text-align: left;
   padding: 1em 0;
@@ -291,11 +294,6 @@ header img {
   justify-content: space-between;
   align-items: center;
 }
-.container .left #skills img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 2em;
-}
 @media (max-width: 1296px) {
   .container .left #skills {
     flex-direction: column;
@@ -307,22 +305,17 @@ header img {
 }
 @media (max-width: 1296px) {
   .container .left {
-    height: 125vh;
+    height: 135vh;
   }
 }
 @media (max-width: 1171px) {
   .container .left {
-    height: 135vh;
-  }
-}
-@media (max-width: 1146px) {
-  .container .left {
-    height: 135vh;
+    height: 145vh;
   }
 }
 @media (max-width: 1076px) {
   .container .left {
-    height: 145vh;
+    height: 165vh;
   }
 }
 @media (max-width: 931px) {
@@ -348,15 +341,17 @@ header img {
   height: 95vh;
   padding: 2em 5em 0 5em;
 }
+.container .right img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+}
 .container .right section h3 {
   margin-bottom: 0.5em;
 }
 .container .right section ul {
   text-align: left;
   padding: 1em 0;
-}
-.container .right #intro {
-  line-height: 1.7em;
 }
 .container .right #experience {
   margin-top: 2em;
@@ -373,17 +368,17 @@ header img {
 }
 @media (max-width: 1296px) {
   .container .right {
-    height: 125vh;
+    height: 135vh;
   }
 }
 @media (max-width: 1171px) {
   .container .right {
-    height: 135vh;
+    height: 145vh;
   }
 }
 @media (max-width: 1076px) {
   .container .right {
-    height: 145vh;
+    height: 165vh;
   }
 }
 @media (max-width: 931px) {
@@ -401,6 +396,7 @@ header img {
 @media (max-width: 533px) {
   .container .right {
     height: 140vh;
+    padding: 5em 2em;
   }
 }
 @media (max-width: 460px) {
