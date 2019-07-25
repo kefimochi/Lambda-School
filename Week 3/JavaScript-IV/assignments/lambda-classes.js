@@ -32,6 +32,7 @@ class Student extends Person {
     this.previousBackground = attrs.previousBackground;
     this.className = attrs.className;
     this.favSubjects = attrs.favSubjects;
+    this.grade = attrs.grade;
     // favSubjects is an array
   }
 
@@ -45,6 +46,11 @@ class Student extends Person {
 
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`);
+  }
+
+  graduate() {
+    if (this.grade > 70) console.log(`${this.name} successfully graduated!`);
+    else console.log("Needs a higher grade to graduate");
   }
 }
 
@@ -88,6 +94,7 @@ const Kate = new Student({
   location: "Sunnyvale",
   previousBackground: "C++, Java and JavaScript",
   className: "WEB22",
+  grade: 100,
   favSubjects: ["Drawing", "Coding", "Anything that does not involve running"]
 });
 
@@ -97,6 +104,7 @@ const Gregoriooo = new Student({
   location: "End of this World",
   previousBackground: "Being rasict against Khajiits",
   className: "WEB588",
+  grade: 78,
   favSubjects: ["Coming from the future", "to leave you", "a message!"]
 });
 
@@ -132,9 +140,11 @@ Igrid.grade(Kate, "facial expressions");
 Kate.listsSubjects();
 Kate.PRAssignment("React");
 Kate.sprintChallenge("JS V");
+Kate.graduate();
 Gregoriooo.listsSubjects();
 Gregoriooo.PRAssignment("Vue");
 Gregoriooo.sprintChallenge("Overloard");
+Gregoriooo.graduate();
 
 Sansa.demo("sarcasm");
 Sansa.grade(Gregoriooo, "ethics");
