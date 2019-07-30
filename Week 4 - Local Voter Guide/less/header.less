@@ -23,6 +23,17 @@ header {
     top: 1.5em;
   }
 
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40em;
+    position: relative;
+    bottom: -5em;
+    top: 0;
+  }
+
   @media (max-width: 739px) {
     display: flex;
     flex-direction: column;
@@ -50,6 +61,10 @@ header {
 
     @media (max-width: 1110px) {
       font-size: 3.2em;
+    }
+
+    @media (max-width: 900px) {
+      font-size: 5em;
     }
 
     @media (max-width: 500px) {
@@ -87,6 +102,11 @@ header {
     width: 40%;
     margin-left: 2.5em;
     line-height: 3em;
+  }
+
+  @media (max-width: 900px) {
+    width: 90%;
+    margin: 0;
   }
 
   @media (max-width: 434px) {

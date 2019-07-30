@@ -87,6 +87,18 @@ header img {
     top: 1.5em;
   }
 }
+@media (max-width: 900px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40em;
+    position: relative;
+    bottom: -5em;
+    top: 0;
+  }
+}
 @media (max-width: 739px) {
   header {
     display: flex;
@@ -115,6 +127,11 @@ header img {
 @media (max-width: 1110px) {
   .header-container h1 {
     font-size: 3.2em;
+  }
+}
+@media (max-width: 900px) {
+  .header-container h1 {
+    font-size: 5em;
   }
 }
 @media (max-width: 500px) {
@@ -154,6 +171,12 @@ header img {
     width: 40%;
     margin-left: 2.5em;
     line-height: 3em;
+  }
+}
+@media (max-width: 900px) {
+  .header-container {
+    width: 90%;
+    margin: 0;
   }
 }
 @media (max-width: 434px) {
