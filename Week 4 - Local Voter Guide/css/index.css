@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 nav {
   top: 0;
   width: 100%;
@@ -20,8 +16,9 @@ nav {
 nav h1 {
   color: white;
   font-family: "Great Vibes", cursive;
-  font-size: 2em;
+  font-size: 1.5em;
   padding-left: 1.5em;
+  font-family: "Playfair Display", serif;
 }
 @media (max-width: 900px) {
   nav h1 {
@@ -93,7 +90,7 @@ header img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40em;
+    height: 35em;
     position: relative;
     bottom: -5em;
     top: 0;
@@ -113,30 +110,34 @@ header img {
   height: auto;
   text-align: center;
   align-items: center;
-  line-height: 4em;
+  line-height: 3em;
   letter-spacing: 0.1em;
   margin-left: 5em;
   position: absolute;
 }
 .header-container h1 {
-  font-size: 5.5em;
+  font-size: 3.1em;
   color: #656691;
   line-height: 1em;
+  letter-spacing: 0;
   font-family: "Great Vibes", cursive;
+  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 0.2em;
 }
 @media (max-width: 1110px) {
   .header-container h1 {
-    font-size: 3.2em;
+    font-size: 2.2em;
   }
 }
 @media (max-width: 900px) {
   .header-container h1 {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 @media (max-width: 500px) {
   .header-container h1 {
-    font-size: 3.5em;
+    font-size: 3em;
   }
 }
 @media (max-width: 296px) {
@@ -147,7 +148,8 @@ header img {
 .header-container h3 {
   color: #c8c0db;
   font-size: 1.2em;
-  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
 }
 @media (max-width: 739px) {
   .header-container h3 {
@@ -164,7 +166,13 @@ header img {
   background-color: #656691;
   color: white;
   line-height: 3em;
+  transition: 0.15s all ease-in-out;
   border-radius: 10em;
+}
+.header-container .button:hover {
+  color: #656691;
+  background-color: white;
+  box-shadow: inset 0px 0px 0px 2px #656691;
 }
 @media (max-width: 1110px) {
   .header-container {
@@ -183,6 +191,54 @@ header img {
   .header-container {
     height: 7em;
   }
+}
+.divider {
+  position: relative;
+  background-color: white;
+}
+.for-divider {
+  display: flex;
+  flex-direction: column;
+}
+.first-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5em;
+  padding-top: 0;
+  justify-content: space-between;
+  height: auto;
+  background-color: #656691;
+  line-height: 2.2em;
+  width: 100%;
+  color: #5f0505;
+}
+.first-container .testimonial-box {
+  width: 30%;
+  height: 20em;
+  background-color: #c8c0db;
+}
+.first-container .left {
+  border-top: 5px solid #d2907f73;
+  background-color: #f7f7f7;
+  width: 45%;
+  height: 95vh;
+  padding: 3em 5em;
+  padding-bottom: 0;
+}
+.first-container .right {
+  border-top: 5px solid #d2907f73;
+  background-color: #f7f7f7;
+  width: 45%;
+  height: 95vh;
+  padding: 2em 5em 0 5em;
+}
+.sect-title {
+  font-size: 1.3em;
+  font-family: "Open Sans Condensed", sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 footer {
   background: url("../images/nav.png");
@@ -317,7 +373,7 @@ html,
 body {
   height: 100%;
   font-family: "Quicksand", sans-serif;
-  background-color: #eadbdb;
+  background-color: white;
 }
 body {
   height: auto;
@@ -330,177 +386,4 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-/* ************************************************************************** */
-.divider {
-  position: relative;
-  background-color: white;
-}
-.for-divider {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5em;
-  padding-top: 0;
-  justify-content: space-around;
-  height: auto;
-  line-height: 2.2em;
-  width: 100%;
-  color: #5f0505;
-}
-.container .left {
-  border-top: 5px solid #d2907f73;
-  background-color: #f7f7f7;
-  width: 45%;
-  height: 95vh;
-  padding: 3em 5em;
-  padding-bottom: 0;
-}
-.container .left #intro {
-  line-height: 1.9em;
-}
-.container .left section ul {
-  text-align: left;
-  padding: 1em 0;
-}
-.container .left #contact ul li {
-  list-style: none;
-  font-size: 1em;
-}
-.container .left #skills {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 1296px) {
-  .container .left #skills {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .container .left #skills h3 {
-    align-self: center;
-  }
-}
-@media (max-width: 1296px) {
-  .container .left {
-    height: 135vh;
-  }
-}
-@media (max-width: 1171px) {
-  .container .left {
-    height: 145vh;
-  }
-}
-@media (max-width: 1076px) {
-  .container .left {
-    height: 165vh;
-  }
-}
-@media (max-width: 931px) {
-  .container .left {
-    width: 90%;
-    height: 130vh;
-  }
-}
-@media (max-width: 671px) {
-  .container .left {
-    height: 115vh;
-  }
-}
-@media (max-width: 500px) {
-  .container .left {
-    padding: 5em 2em;
-  }
-}
-.container .right {
-  border-top: 5px solid #d2907f73;
-  background-color: #f7f7f7;
-  width: 45%;
-  height: 95vh;
-  padding: 2em 5em 0 5em;
-}
-.container .right img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 2em;
-}
-.container .right section h3 {
-  margin-bottom: 0.5em;
-}
-.container .right section ul {
-  text-align: left;
-  padding: 1em 0;
-}
-.container .right #experience {
-  margin-top: 2em;
-}
-.container .right #experience .exp-title {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
-.container .right #experience p {
-  font-size: 0.9em;
-  line-height: 1.4em;
-  text-align: left;
-}
-@media (max-width: 1296px) {
-  .container .right {
-    height: 135vh;
-  }
-}
-@media (max-width: 1171px) {
-  .container .right {
-    height: 145vh;
-  }
-}
-@media (max-width: 1076px) {
-  .container .right {
-    height: 165vh;
-  }
-}
-@media (max-width: 931px) {
-  .container .right {
-    flex-direction: column;
-    width: 90%;
-    height: 90vh;
-  }
-}
-@media (max-width: 671px) {
-  .container .right {
-    height: 113vh;
-  }
-}
-@media (max-width: 533px) {
-  .container .right {
-    height: 140vh;
-    padding: 5em 2em;
-  }
-}
-@media (max-width: 460px) {
-  .container .right {
-    height: 160vh;
-  }
-}
-@media (max-width: 1040px) {
-  .container {
-    padding: 5em 0;
-  }
-}
-@media (max-width: 931px) {
-  .container {
-    flex-direction: column;
-  }
-}
-.sect-title {
-  font-size: 1.3em;
-  font-family: "Open Sans Condensed", sans-serif;
-  letter-spacing: 0.1em;
-  font-weight: 600;
 }

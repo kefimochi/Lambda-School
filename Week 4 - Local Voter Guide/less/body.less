@@ -1,0 +1,51 @@
+.divider {
+  position: relative;
+  background-color: white;
+}
+
+.for-divider {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-container {
+  .centered-flex();
+  padding: 5em;
+  padding-top: 0;
+  justify-content: space-between;
+  height: auto;
+  background-color: @mid-purple;
+  line-height: 2.2em;
+  width: 100%;
+  color: @dark;
+
+  .testimonial-box {
+    width: 30%;
+    height: 20em;
+    background-color: @light-purple;
+  }
+
+  .left {
+    border-top: 5px solid #d2907f73;
+    background-color: @really-light;
+    width: 45%;
+    height: 95vh;
+    padding: 3em 5em;
+    padding-bottom: 0;
+  }
+
+  .right {
+    border-top: 5px solid #d2907f73;
+    background-color: @really-light;
+    width: 45%;
+    height: 95vh;
+    padding: 2em 5em 0 5em;
+  }
+}
+
+.sect-title {
+  font-size: 1.3em;
+  .tall-font();
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}

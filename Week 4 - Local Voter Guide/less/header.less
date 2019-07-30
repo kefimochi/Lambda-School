@@ -28,7 +28,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40em;
+    height: 35em;
     position: relative;
     bottom: -5em;
     top: 0;
@@ -48,27 +48,31 @@ header {
   height: auto;
   text-align: center;
   align-items: center;
-  line-height: 4em;
+  line-height: 3em;
   letter-spacing: 0.1em;
   margin-left: 5em;
   position: absolute;
 
   h1 {
-    font-size: 5.5em;
+    font-size: 3.1em;
     color: @mid-purple;
     line-height: 1em;
+    letter-spacing: 0;
     font-family: "Great Vibes", cursive;
+    font-family: "Darker Grotesque", sans-serif;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 0.2em;
 
     @media (max-width: 1110px) {
-      font-size: 3.2em;
+      font-size: 2.2em;
     }
 
     @media (max-width: 900px) {
-      font-size: 5em;
+      font-size: 3.5em;
     }
 
     @media (max-width: 500px) {
-      font-size: 3.5em;
+      font-size: 3em;
     }
 
     @media (max-width: 296px) {
@@ -79,7 +83,8 @@ header {
   h3 {
     color: @light-purple;
     font-size: 1.2em;
-    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
 
     @media (max-width: 739px) {
       margin-bottom: 0.5em;
@@ -95,7 +100,14 @@ header {
     // background-color: @orange;
     color: white;
     line-height: 3em;
+    transition: 0.15s all ease-in-out;
     border-radius: 10em;
+
+    &:hover {
+      color: @mid-purple;
+      background-color: white;
+      box-shadow: inset 0px 0px 0px 2px @mid-purple;
+    }
   }
 
   @media (max-width: 1110px) {
