@@ -216,16 +216,24 @@ header img {
 }
 .first-container .testimonial-box {
   width: 30%;
-  height: 30em;
+  height: 23em;
   background-color: #c8c0db;
 }
-.first-container .testimonial-box .hidden {
-  height: 15%;
-  width: 100%;
-  background-color: firebrick;
+.first-container .testimonial-box .text-testimonial {
+  padding: 2em;
+  padding-top: 6em;
 }
-.first-container .testimonial-box .person {
-  position: relative;
+.first-container .testimonial-box .hidden {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  background-color: #656691;
+}
+.first-container .testimonial-box .hidden .person {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: absolute;
   border: 9px solid #656691;
   height: 10em;
   width: auto;
