@@ -10,33 +10,46 @@
 
 .first-container {
   .centered-flex();
-  padding: 5em;
+  padding: 3em;
   padding-top: 3em;
   justify-content: space-between;
   height: auto;
-  background-color: #9192bb;
   line-height: 2.2em;
   width: 100%;
   color: @dark;
-  background-image: linear-gradient(
-    to top,
-    #eadbdb,
-    #dec5cd,
-    #cdb2c4,
-    #b4a0bf,
-    #9192bb
-  );
+  // background-image: linear-gradient(
+  //   to top,
+  //   #eadbdb,
+  //   #dec5cd,
+  //   #cdb2c4,
+  //   #b4a0bf,
+  //   #9192bb
+  // );
+  background: url("../images/bottom-wave.svg");
+  background-size: cover;
+  background-color: #9192bb;
+  background-repeat: no-repeat;
+  // background-position: bottom;
   flex-wrap: wrap;
 
   .testimonial-box {
-    width: 30%;
+    width: 32%;
     height: 23em;
     border-radius: 0.5em;
     background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    // background-color: #f7d7d8;
 
     .text-testimonial {
+      border-top: 10px solid #9192bb6c;
+      height: 100%;
+      z-index: 1;
+      position: relative;
       padding: 2em;
-      padding-top: 6em;
+      padding-top: 5.6em;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0 80%);
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 0.3em;
     }
 
     .hidden {
@@ -45,11 +58,13 @@
       align-content: center;
 
       .person {
+        z-index: 5;
+        position: relative;
         display: flex;
         align-self: center;
         justify-content: center;
         position: absolute;
-        border: 10px solid #9192bb;
+        border: 6px solid #9192bb;
         height: 11em;
         width: auto;
         border-radius: 50em;
@@ -77,11 +92,8 @@
 }
 
 .sect-title {
-  font-size: 1.5em;
-  .tall-font();
-  letter-spacing: 0.1em;
+  font-size: 1.3em;
   font-weight: 600;
   color: @mid-purple;
-  //   font-family: "Darker Grotesque", sans-serif;
-  //   font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 }
