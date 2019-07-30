@@ -216,8 +216,20 @@ header img {
 }
 .first-container .testimonial-box {
   width: 30%;
-  height: 20em;
+  height: 30em;
   background-color: #c8c0db;
+}
+.first-container .testimonial-box .hidden {
+  height: 15%;
+  width: 100%;
+  background-color: firebrick;
+}
+.first-container .testimonial-box .person {
+  position: relative;
+  border: 9px solid #656691;
+  height: 10em;
+  width: auto;
+  border-radius: 50em;
 }
 .first-container .left {
   border-top: 5px solid #d2907f73;
