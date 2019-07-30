@@ -11,18 +11,28 @@
 .first-container {
   .centered-flex();
   padding: 5em;
-  padding-top: 0;
+  padding-top: 3em;
   justify-content: space-between;
   height: auto;
-  background-color: @mid-purple;
+  background-color: #9192bb;
   line-height: 2.2em;
   width: 100%;
   color: @dark;
+  background-image: linear-gradient(
+    to top,
+    #eadbdb,
+    #dec5cd,
+    #cdb2c4,
+    #b4a0bf,
+    #9192bb
+  );
+  flex-wrap: wrap;
 
   .testimonial-box {
     width: 30%;
     height: 23em;
-    background-color: @light-purple;
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.8);
 
     .text-testimonial {
       padding: 2em;
@@ -30,45 +40,48 @@
     }
 
     .hidden {
+      display: flex;
       justify-content: center;
       align-content: center;
-      display: flex;
-      background-color: @mid-purple;
 
       .person {
         display: flex;
         align-self: center;
         justify-content: center;
         position: absolute;
-        border: 9px solid @mid-purple;
-        height: 10em;
+        border: 10px solid #9192bb;
+        height: 11em;
         width: auto;
         border-radius: 50em;
       }
     }
+    @media (max-width: 1200px) {
+      height: 27em;
+    }
+    @media (max-width: 1030px) {
+      margin-bottom: 7em;
+      width: 80%;
+      height: auto;
+    }
+    @media (max-width: 500px) {
+      width: 95%;
+    }
   }
-
-  .left {
-    border-top: 5px solid #d2907f73;
-    background-color: @really-light;
-    width: 45%;
-    height: 95vh;
-    padding: 3em 5em;
-    padding-bottom: 0;
+  @media (max-width: 1030px) {
+    flex-direction: column;
   }
-
-  .right {
-    border-top: 5px solid #d2907f73;
-    background-color: @really-light;
-    width: 45%;
-    height: 95vh;
-    padding: 2em 5em 0 5em;
+  @media (max-width: 500px) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 .sect-title {
-  font-size: 1.3em;
+  font-size: 1.5em;
   .tall-font();
   letter-spacing: 0.1em;
   font-weight: 600;
+  color: @mid-purple;
+  //   font-family: "Darker Grotesque", sans-serif;
+  //   font-family: "Playfair Display", serif;
 }
