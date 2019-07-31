@@ -17,15 +17,8 @@
   line-height: 2.2em;
   width: 100%;
   color: @dark;
-  // background-image: linear-gradient(
-  //   to top,
-  //   #eadbdb,
-  //   #dec5cd,
-  //   #cdb2c4,
-  //   #b4a0bf,
-  //   #9192bb
-  // );
-  background: url("../images/bottom-wave.svg");
+  background-image: linear-gradient(to top, #dec5cd, #cdb2c4, #b4a0bf, #9192bb);
+  // background: url("../images/bottom-wave.svg");
   background-size: cover;
   background-color: #9192bb;
   background-repeat: no-repeat;
@@ -41,15 +34,20 @@
     // background-color: #f7d7d8;
 
     .text-testimonial {
-      border-top: 10px solid #9192bb6c;
+      // border-top: 10px solid #9192bb6c;
       height: 100%;
       z-index: 1;
       position: relative;
       padding: 2em;
       padding-top: 5.6em;
       clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0 80%);
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.85);
       margin: 0.3em;
+
+      @media (max-width: 397px) {
+        padding: 1em;
+        padding-top: 5.6em;
+      }
     }
 
     .hidden {
@@ -74,15 +72,20 @@
       height: 27em;
     }
     @media (max-width: 1030px) {
-      margin-bottom: 7em;
-      width: 80%;
-      height: auto;
+      margin-bottom: 9em;
+      width: 60%;
+      height: 22em;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 750px) {
+      height: 22em;
       width: 95%;
+    }
+    @media (max-width: 397px) {
+      height: 30em;
     }
   }
   @media (max-width: 1030px) {
+    padding-bottom: 0;
     flex-direction: column;
   }
   @media (max-width: 500px) {
@@ -91,9 +94,36 @@
   }
 }
 
+.second-container {
+  height: auto;
+  width: 100%;
+  // background-color: #9192bb;
+  background-color: #f4e4e9;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .about-outer {
+    height: 40em;
+    width: 92%;
+    // background-color: #ffffff;
+    display: flex;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    .about-text {
+    }
+  }
+}
+
 .sect-title {
   font-size: 1.3em;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: @mid-purple;
   font-family: "Playfair Display", serif;
 }

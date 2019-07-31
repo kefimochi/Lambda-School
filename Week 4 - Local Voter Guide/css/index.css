@@ -13,17 +13,26 @@ nav {
   background-attachment: fixed;
   background-size: 100%;
 }
+nav img {
+  height: 100%;
+  width: auto;
+  padding-left: 1.5em;
+}
+@media (max-width: 900px) {
+  nav img {
+    padding: 0;
+  }
+}
 nav h1 {
   color: white;
   font-size: 1.8em;
   padding-left: 1.5em;
   font-family: "Darker Grotesque", sans-serif;
-  letter-spacing: 0.1em;
 }
 @media (max-width: 900px) {
   nav h1 {
     padding: 0;
-    font-size: 2.5em;
+    font-size: 2em;
   }
 }
 nav .links {
@@ -51,7 +60,7 @@ nav .links a:hover {
 }
 @media (max-width: 900px) {
   nav {
-    height: 6em;
+    height: 5.5em;
     background: #656691;
     flex-direction: column;
     justify-content: space-around;
@@ -213,7 +222,7 @@ header img {
   line-height: 2.2em;
   width: 100%;
   color: #5f0505;
-  background: url("../images/bottom-wave.svg");
+  background-image: linear-gradient(to top, #dec5cd, #cdb2c4, #b4a0bf, #9192bb);
   background-size: cover;
   background-color: #9192bb;
   background-repeat: no-repeat;
@@ -227,15 +236,20 @@ header img {
   background-color: transparent;
 }
 .first-container .testimonial-box .text-testimonial {
-  border-top: 10px solid #9192bb6c;
   height: 100%;
   z-index: 1;
   position: relative;
   padding: 2em;
   padding-top: 5.6em;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0 80%);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.85);
   margin: 0.3em;
+}
+@media (max-width: 397px) {
+  .first-container .testimonial-box .text-testimonial {
+    padding: 1em;
+    padding-top: 5.6em;
+  }
 }
 .first-container .testimonial-box .hidden {
   display: flex;
@@ -261,18 +275,25 @@ header img {
 }
 @media (max-width: 1030px) {
   .first-container .testimonial-box {
-    margin-bottom: 7em;
-    width: 80%;
-    height: auto;
+    margin-bottom: 9em;
+    width: 60%;
+    height: 22em;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .first-container .testimonial-box {
+    height: 22em;
     width: 95%;
+  }
+}
+@media (max-width: 397px) {
+  .first-container .testimonial-box {
+    height: 30em;
   }
 }
 @media (max-width: 1030px) {
   .first-container {
+    padding-bottom: 0;
     flex-direction: column;
   }
 }
@@ -282,9 +303,28 @@ header img {
     padding-right: 0;
   }
 }
+.second-container {
+  height: auto;
+  width: 100%;
+  background-color: #f4e4e9;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.second-container .about-outer {
+  height: 40em;
+  width: 92%;
+  display: flex;
+}
+.second-container .about-outer img {
+  height: auto;
+  width: 100%;
+}
 .sect-title {
   font-size: 1.3em;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: #656691;
   font-family: "Playfair Display", serif;
 }
@@ -420,7 +460,7 @@ html,
 body {
   height: 100%;
   font-family: "Quicksand", sans-serif;
-  background-color: white;
+  background-color: #9192bb;
 }
 body {
   height: auto;
