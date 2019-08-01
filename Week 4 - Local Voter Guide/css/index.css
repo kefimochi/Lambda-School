@@ -520,6 +520,7 @@ header img {
 @media (max-width: 650px) {
   .inner-container {
     width: 100%;
+    padding: 1em;
   }
 }
 footer {
