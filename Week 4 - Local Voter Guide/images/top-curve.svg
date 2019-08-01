@@ -24,7 +24,7 @@
 		</g>
 		<g>
 			
-				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="959.5" y1="-4.5" x2="959.5" y2="504.5" gradientTransform="matrix(1 0 0 -1 0 500)">
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="959.5" y1="204.5" x2="959.5" y2="-304.5" gradientTransform="matrix(1 0 0 1 0 300)">
 				<stop  offset="0" style="stop-color:#FFFFFF"/>
 				<stop  offset="1" style="stop-color:#9192BB"/>
 			</linearGradient>
@@ -34,14 +34,14 @@
 	<path class="st3" d="M960.1,202.2"/>
 	<g>
 		
-			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="844.2164" y1="147.5283" x2="844.2164" y2="459.24" gradientTransform="matrix(1 0 0 -1 0 500)">
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="844.2164" y1="52.4717" x2="844.2164" y2="-259.24" gradientTransform="matrix(1 0 0 1 0 300)">
 			<stop  offset="0" style="stop-color:#656691"/>
 			<stop  offset="1" style="stop-color:#DEC5CD"/>
 		</linearGradient>
 		<path class="st4" d="M1920,68c-180.7,84.3-526.1,216.4-977.5,212.9C159.7,274.9-663.9-241.5,0,68C-8.5,49.8-17.9,22-8-4
 			c70.9-1.5-35.8-9.5,980.3-5.1C1361.7-9.8,1914.7-35.6,1927-4C1936.8,21.3,1928.8,48.4,1920,68z"/>
 		
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="960.4999" y1="218.5" x2="960.4999" y2="501.5" gradientTransform="matrix(1 0 0 -1 0 500)">
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="960.4999" y1="-18.5" x2="960.4999" y2="-301.5" gradientTransform="matrix(1 0 0 1 0 300)">
 			<stop  offset="0" style="stop-color:#656691"/>
 			<stop  offset="1" style="stop-color:#DEC5CD"/>
 		</linearGradient>
