@@ -13,19 +13,9 @@ nav {
   background-attachment: fixed;
   background-size: 100%;
 }
-nav img {
-  height: 100%;
-  width: auto;
-  padding-left: 1.5em;
-}
-@media (max-width: 900px) {
-  nav img {
-    padding: 0;
-  }
-}
 nav h1 {
   color: white;
-  font-size: 1.8em;
+  font-size: 1.7em;
   padding-left: 1.5em;
   font-family: "Darker Grotesque", sans-serif;
 }
@@ -355,6 +345,7 @@ header img {
   padding: 3em;
   padding-top: 1.5em;
   padding-bottom: 5em;
+  font-size: 0.95em;
 }
 @media (max-width: 754px) {
   .second-container .about-outer .about-text {
@@ -363,7 +354,7 @@ header img {
   }
 }
 .second-container .about-outer .about-text h3 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-bottom: 1em;
   font-family: "Playfair Display", serif;
   color: #5f0505;
@@ -413,7 +404,7 @@ header img {
   background-position: top;
 }
 .third-container h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   letter-spacing: 0.1em;
   font-family: "Darker Grotesque", sans-serif;
   margin-bottom: 1.5em;
@@ -426,13 +417,14 @@ header img {
   text-align: center;
   background-color: #656691;
   padding: 0.2em 3em;
+  font-size: 0.9em;
 }
 .third-container .button:hover {
   background-color: #f34a2c;
   color: white;
 }
 .forth-container {
-  height: 34em;
+  height: 30em;
   width: 100%;
   background: #f6f7f9;
   display: flex;
