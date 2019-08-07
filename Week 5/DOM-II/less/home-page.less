@@ -1,0 +1,146 @@
+.img-content-header {
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  .displayFlex(center, center);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: auto;
+
+  img {
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+
+    @media @mobile {
+      margin-top: 5em;
+    }
+  }
+}
+
+.home {
+  background-color: @light-sand;
+  padding: 5em;
+  padding-bottom: 0;
+
+  @media @mobile {
+    padding: 2em;
+    padding-bottom: 0;
+  }
+
+  header .text-content {
+    border-bottom: 2px solid @navigation-border;
+
+    @media @mobile {
+      text-align: center;
+    }
+
+    h2 {
+      padding-top: 1em;
+    }
+  }
+
+  .content-section {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media @mobile {
+      width: 100%;
+      flex-direction: column;
+      .displayFlex(center, center);
+      text-align: center;
+    }
+
+    .text-content {
+      width: 48%;
+      padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
+    }
+
+    .img-content {
+      width: 48%;
+      padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
+
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .inverse-content {
+    padding-bottom: 30px;
+    border-bottom: 2px solid @navigation-border;
+
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
+
+    .text-content {
+      padding-left: 1%;
+      padding-right: 0;
+    }
+
+    .img-content {
+      padding-right: 1%;
+      padding-left: 0;
+    }
+  }
+
+  .content-destination {
+    width: 75%;
+    margin: 0 auto 30px;
+
+    @media @mobile {
+      width: 100%;
+    }
+
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  .content-pick {
+    padding-top: 30px;
+    border-top: 2px solid @navigation-border;
+    display: flex;
+    justify-content: space-between;
+
+    @media @mobile {
+      flex-direction: column;
+      .displayFlex(center, center);
+    }
+
+    .destination {
+      width: 30%;
+      margin-bottom: 30px;
+
+      @media @mobile {
+        width: 80%;
+      }
+
+      .btn {
+        .styleButton(@dark);
+        .slowerAnimation(0.15s);
+      }
+
+      .btn:hover {
+        .hoverButton(@dark);
+      }
+    }
+  }
+} // home
