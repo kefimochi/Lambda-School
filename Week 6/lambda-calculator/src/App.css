@@ -1,0 +1,115 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+  background-repeat: no-repeat;
+  height: 97.7vh;
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  overflow: hidden;
+  /* background: white; */
+  font-family: "Open Sans Condensed", sans-serif;
+  height: auto;
+  width: 355px;
+  border-left: solid 70px transparent;
+  border-right: solid 70px transparent;
+  border-bottom: solid 70px transparent;
+  filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.25));
+}
+
+.container {
+  background: #f6f6f6;
+  height: 34em;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 5em 0%;
+  width: 100%;
+}
+
+.display {
+  height: 8em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5em;
+  letter-spacing: 0.1em;
+  font-size: 1.3em;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+
+.allButtons {
+  height: auto;
+  width: 100%;
+  display: flex;
+  /* background: blue; */
+}
+
+.specialsNumbers {
+  /* background: palegreen; */
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.specialButton {
+  background: #3a4a591f;
+}
+
+.numberButton {
+  background: #f5f5f5;
+  border: 2px solid black;
+}
+
+.operatorsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.operatorButton {
+  background: #3a4a593b;
+  color: white;
+}
+
+.operatorButton:nth-child(5) {
+  background: #e46180;
+}
+
+.button {
+  width: 4.5em;
+  height: 3.5em;
+  /* background: #f5f5f5; */
+  border: none;
+  font-size: 1.1em;
+}
+
+button:active {
+  border: none;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    to right top,
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+}

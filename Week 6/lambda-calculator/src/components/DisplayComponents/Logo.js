@@ -6,6 +6,7 @@ const Logo = () => {
   return (
     <div className="logo-container">
       <img className="logo" src={logo} alt="Lambda's logo" />
+      <p>Im content</p>
     </div>
   );
 };
