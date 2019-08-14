@@ -8,6 +8,7 @@ body {
     #ffc75f,
     #f9f871
   );
+  background: #888788;
   background-repeat: no-repeat;
   height: 97.7vh;
   width: 99%;
@@ -30,25 +31,42 @@ body {
 
 .container {
   background: #f6f6f6;
-  height: 34em;
-  padding: 1em;
+  height: 32em;
+  /* padding: 1em; */
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 5em 0%;
+  border-radius: 2.5em 0.2em 2.5em 0.2em;
   width: 100%;
 }
 
-.display {
-  height: 8em;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1.5em;
+.display-result {
   letter-spacing: 0.1em;
   font-size: 1.3em;
-  padding-bottom: 0;
   box-sizing: border-box;
   align-items: flex-end;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1em;
+  padding-top: 6.7em;
+  padding-bottom: 1em;
+}
+
+.display h2,
+h3 {
+  margin: 0;
+}
+
+.display h3 {
+  font-size: 1.2em;
+  color: #888788;
+}
+
+.display h2 {
+  font-size: 2em;
 }
 
 .allButtons {
@@ -60,7 +78,7 @@ body {
 
 .specialsNumbers {
   /* background: palegreen; */
-  width: 75%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -68,7 +86,8 @@ body {
 }
 
 .specialButton {
-  background: #3a4a591f;
+  background: #e7e7e7;
+  border-bottom: 1px solid #ffc75f;
 }
 
 .numberButton {
@@ -82,34 +101,33 @@ body {
 }
 
 .operatorButton {
-  background: #3a4a593b;
+  background: #3a4a59;
   color: white;
 }
 
 .operatorButton:nth-child(5) {
-  background: #e46180;
+  background: #debe12;
+  color: white;
 }
 
 .button {
-  width: 4.5em;
+  width: 5em;
   height: 3.5em;
   /* background: #f5f5f5; */
   border: none;
   font-size: 1.1em;
 }
 
-button:active {
+.button:focus {
   border: none;
+  outline: none;
+  user-select: none;
 }
 
-button:hover {
-  background-image: linear-gradient(
-    to right top,
-    #845ec2,
-    #d65db1,
-    #ff6f91,
-    #ff9671,
-    #ffc75f,
-    #f9f871
-  );
+.button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

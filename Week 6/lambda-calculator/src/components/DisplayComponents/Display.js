@@ -4,7 +4,10 @@ import React from "react";
 const Display = () => {
   return (
     <div className="display">
-      <h1>35</h1>
+      <h3>30 + 5</h3>
+      <div class="display-result">
+        <h2>35</h2>
+      </div>
     </div>
   );
 };
