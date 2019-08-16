@@ -1,2 +1,2 @@
 # Lambda-School
-My projects and resources related to Lambda School
+All projects completed in Lambda School neatly organized by weeks. You can find all of them in seperate forked repos but I just wanted to have a neatly organized place to show it all off at once!
