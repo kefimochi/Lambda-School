@@ -6,7 +6,6 @@ import { Route } from "react-router-dom";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
-  const [urlID, setUrlID] = useState(0);
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
   };
@@ -18,14 +17,7 @@ const App = () => {
       <Route
         match
         path="/movies/:id"
-        render={props => (
-          <Movie
-            {...props}
-            setUrlID={setUrlID}
-            urlID={urlID}
-            movies={MovieList}
-          />
-        )}
+        render={props => <Movie {...props} movies={MovieList} />}
       />
     </div>
   );
