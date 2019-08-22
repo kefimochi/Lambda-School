@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Card from "./Card";
 import { useState, useEffect } from "react";
 import Form from "./Form";
 
@@ -8,12 +9,9 @@ function App() {
   return (
     <>
       <Form usersArray={usersArray} setUsersArray={setUsersArray} />
-      {
-        (usersArray !== []) ?
-          usersArray.map(user => console.log(user)) : false;
-      }
-      
-      }
+      {usersArray.map(user => (
+        <Card user={user} />
+      ))}
     </>
   );
 }
