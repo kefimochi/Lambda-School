@@ -1,38 +1,50 @@
 import React from "react";
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
 
 const Form = props => {
+  const [user, setUser] = useState({ name: "", email: "", role: "" });
+  let userCount = 0;
   const handleChange = event => {
-    props.setUser({ ...props.user, [event.target.name]: event.target.value });
+    setUser({ ...user, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(props.user.name);
-    console.log(props.user.password);
+    props.setUsersArray([...props.usersArray, user]);
+    console.log("users array", props.usersArray);
+    console.log(user.name);
+    console.log(user.email);
+    console.log(user.role);
   };
 
   return (
     <div className="App">
-      {console.log(props.user)}
       <form onSubmit={event => handleSubmit(event)}>
         <label>
-          Full:
+          Name:
           <input
             type="text"
-            name="username"
-            value={props.user.username}
+            name="name"
+            value={user.name}
             onChange={event => handleChange(event)}
           />
         </label>
         <label>
-          Password:
+          Email:
           <input
             type="text"
-            name="password"
-            value={props.user.password}
+            name="email"
+            value={user.email}
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <label>
+          Role:
+          <input
+            type="text"
+            name="role"
+            value={user.role}
             onChange={event => handleChange(event)}
           />
         </label>

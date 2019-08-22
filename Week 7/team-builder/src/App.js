@@ -4,9 +4,18 @@ import { useState, useEffect } from "react";
 import Form from "./Form";
 
 function App() {
-  const [user, setUser] = useState({ username: "", password: "" });
-
-  return <Form user={user} setUser={setUser} />;
+  const [usersArray, setUsersArray] = useState([]);
+  return (
+    <>
+      <Form usersArray={usersArray} setUsersArray={setUsersArray} />
+      {
+        (usersArray !== []) ?
+          usersArray.map(user => console.log(user)) : false;
+      }
+      
+      }
+    </>
+  );
 }
 
 export default App;
