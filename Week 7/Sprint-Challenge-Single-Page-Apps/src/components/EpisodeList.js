@@ -21,9 +21,11 @@ export default function EpisodeList() {
 
   return (
     <section className="character-list grid-view">
-      {data.map((episode, i) => (
-        <EpisodeCard info={episode} key={i} />
-      ))}
+      {data.length ? (
+        data.map((char, i) => <EpisodeCard info={char} key={i} />)
+      ) : (
+        <h4 text-align="center">Loading...</h4>
+      )}
     </section>
   );
 }

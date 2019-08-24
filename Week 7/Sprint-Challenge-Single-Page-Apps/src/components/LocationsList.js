@@ -21,9 +21,11 @@ export default function LocationList() {
 
   return (
     <section className="character-list grid-view">
-      {data.map((location, i) => (
-        <LocationCard info={location} key={i} />
-      ))}
+      {data.length ? (
+        data.map((char, i) => <LocationCard info={char} key={i} />)
+      ) : (
+        <h4 text-align="center">Loading...</h4>
+      )}
     </section>
   );
 }

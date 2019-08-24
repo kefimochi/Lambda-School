@@ -17,19 +17,17 @@ export default function CharacterList() {
         .catch(err => console.log("Error message", err));
     };
 
-    // if (localStorage.getItem("characters") !== null) {
-    // setData(JSON.parse(localStorage.getItem("characters")));
-    // } else {
     fetch();
-    // }
   }, []);
   console.log(JSON.parse(localStorage.getItem("characters")));
 
   return (
     <section className="character-list grid-view">
-      {data.map((char, i) => (
-        <CharacterCard info={char} key={i} />
-      ))}
+      {data.length ? (
+        data.map((char, i) => <CharacterCard info={char} key={i} />)
+      ) : (
+        <h4 text-align="center">Loading...</h4>
+      )}
     </section>
   );
 }
