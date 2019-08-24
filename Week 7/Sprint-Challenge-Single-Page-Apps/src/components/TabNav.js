@@ -1,12 +1,44 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { Tab } from "semantic-ui-react";
+import WelcomePage from "./WelcomePage";
+import LocationsList from "./LocationsList";
+import EpisodeList from "./EpisodeList";
+import CharacterList from "./CharacterList";
 
 const panes = [
-  { menuItem: "Home", render: () => <Tab.Pane>Tab 1 Content</Tab.Pane> },
-  { menuItem: "Characters", render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
-  { menuItem: "Locations", render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
-  { menuItem: "Episodes", render: () => <Tab.Pane>Tab 4 Content</Tab.Pane> }
+  {
+    menuItem: "Home",
+    render: () => (
+      <Tab.Pane>
+        <WelcomePage />
+      </Tab.Pane>
+    )
+  },
+  {
+    menuItem: "Characters",
+    render: () => (
+      <Tab.Pane>
+        <CharacterList />
+      </Tab.Pane>
+    )
+  },
+  {
+    menuItem: "Locations",
+    render: () => (
+      <Tab.Pane>
+        <LocationsList />
+      </Tab.Pane>
+    )
+  },
+  {
+    menuItem: "Episodes",
+    render: () => (
+      <Tab.Pane>
+        <EpisodeList />
+      </Tab.Pane>
+    )
+  }
 ];
 
 const TabNav = () => {

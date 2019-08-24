@@ -14,6 +14,10 @@ main {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
+.pages {
+  padding: 2em;
+}
+
 .grid-view {
   display: flex;
   flex-wrap: wrap;
@@ -35,5 +39,65 @@ main {
 } */
 
 header h1 {
+  text-align: center;
+}
+
+.char-container {
+  width: 15em;
+  height: auto;
+  margin: 0.9em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+.char-container img {
+  width: 100%;
+  height: auto;
+}
+
+.char-container h3,
+h5,
+p {
+  text-align: center;
+  margin: 3px;
+}
+
+.char-container p {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.location-container {
+  width: 15em;
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 0.5em;
+  height: auto;
+  margin: 0.5em;
+  padding: 1em;
+}
+
+.location-container h3,
+h5 {
+  text-align: right;
+  margin: 0.2em;
+}
+
+.location-container p {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.episode-container {
+  margin: 1em;
+  height: auto;
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 0.5em;
+  width: 16em;
+  padding: 1em;
+}
+
+.episode-container h3,
+h5 {
+  margin: 0.5em;
   text-align: center;
 }
