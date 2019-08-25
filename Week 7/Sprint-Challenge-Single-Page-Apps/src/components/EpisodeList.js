@@ -12,17 +12,22 @@ export default function EpisodeList() {
         .then(res => {
           console.log(res.data.results);
           setData(res.data.results);
+          localStorage.setItem("episodes", JSON.stringify(res.data.results));
         })
         .catch(err => console.log("Error message", err));
     };
 
-    fetch();
+    if (localStorage.getItem("episodes") === null) {
+      fetch();
+    }
   }, []);
 
   return (
     <section className="character-list grid-view">
-      {data.length ? (
-        data.map((char, i) => <EpisodeCard info={char} key={i} />)
+      {localStorage.getItem("episodes") ? (
+        JSON.parse(localStorage.getItem("episodes")).map((char, i) => (
+          <EpisodeCard info={char} key={i} />
+        ))
       ) : (
         <h4 text-align="center">Loading...</h4>
       )}
