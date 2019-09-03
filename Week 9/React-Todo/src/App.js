@@ -8,23 +8,26 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   constructor() {
     super();
-    this.state = [];
+    this.state = {
+      todos: []
+    };
+    this.newValue = {};
   }
-
-  newTodo = {};
 
   updateStateMessage = e => {
     let value = e.target.value;
     if (value !== null) {
-      newTodo = { target: value, id: Date.now(), completed: false };
-      console.log(this.newTodo);
+      this.newValue = { target: value, id: Date.now(), completed: false };
+      console.log(this.newValue);
       // this.setState([{ target: value, id: Date.now(), completed: false }]);
     }
   };
 
   handleSubmit = e => {
-    console.log("Submit e", e);
     e.preventDefault();
+    this.setState({
+      todos: [...this.state.todos, this.newValue]
+    });
   };
 
   clearCompleted = () => {
@@ -36,7 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        {/* <TodoList data={this.state} /> */}
+        <TodoList data={this.state.todos} />
         <TodoForm
           submit={this.handleSubmit}
           updateValue={this.updateStateMessage}

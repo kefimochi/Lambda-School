@@ -9,7 +9,7 @@ const TodoForm = props => {
         placeholder="change state"
         onChange={props.updateValue}
       />
-      <button type="submit">Add to ther list</button>
+      <button type="submit">Add to the list</button>
       <button>Clear completed</button>
     </form>
   );

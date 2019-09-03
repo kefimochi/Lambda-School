@@ -6,12 +6,15 @@ import Todo from "./Todo";
 }
 // recieves changer functions that set the state
 const TodoList = props => {
-  if (props.data === undefined) return <h3>Empty</h3>;
-  return props.data.map(todo => {
-    console.log(todo);
-    // Append child somehow
-    return <Todo data={props.data} />;
-  });
+  return props.data ? (
+    props.data.map(todo => {
+      console.log(todo);
+      // Append child somehow
+      return <Todo data={todo} key={todo.id} />;
+    })
+  ) : (
+    <h3>You completed all todos!</h3>
+  );
 };
 
 export default TodoList;
