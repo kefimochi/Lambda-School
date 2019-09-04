@@ -37,25 +37,30 @@ class App extends React.Component {
   };
 
   clearCompleted = () => {
-    // some filter, create a new array w/o completed?
-    // if (this.state.completed === true)
+    let newArr = this.state.todos.filter(
+      element => element.completed === false
+    );
+
+    this.setState({ todos: newArr });
   };
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList
-          data={this.state.todos}
-          clearCompleted={this.clearCompleted}
-          toggleCompleted={this.toggleCompleted}
-        />
-        <TodoForm
-          handleSubmit={this.handleSubmit}
-          updateValue={this.updateStateMessage}
-        />
-        {console.log("This state", this.state)}
-        {console.log("inpuy", document.getElementById("todoInput"))}
+      <div class="app-container">
+        <div class="app">
+          <h2>Welcome to your Todo App!</h2>
+          <TodoList
+            data={this.state.todos}
+            toggleCompleted={this.toggleCompleted}
+          />
+          <TodoForm
+            handleSubmit={this.handleSubmit}
+            updateValue={this.updateStateMessage}
+            clearCompleted={this.clearCompleted}
+          />
+          {console.log("This state", this.state)}
+          {console.log("inpuy", document.getElementById("todoInput"))}
+        </div>
       </div>
     );
   }
