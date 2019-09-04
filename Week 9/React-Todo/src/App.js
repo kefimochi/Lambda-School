@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import "./components/CSS/index.css";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -19,7 +20,6 @@ class App extends React.Component {
     if (value !== null) {
       this.newValue = { target: value, id: Date.now(), completed: false };
       console.log(this.newValue);
-      // this.setState([{ target: value, id: Date.now(), completed: false }]);
     }
   };
 
@@ -28,6 +28,20 @@ class App extends React.Component {
     this.setState({
       todos: [...this.state.todos, this.newValue]
     });
+  };
+
+  // Expects an object
+  toggleCompleted = id => {
+    console.log("IT WORKS!!", id);
+
+    let newArr = this.state.todos.map(element =>
+      element.id === id
+        ? { ...element, completed: !element.completed }
+        : element
+    );
+
+    this.setState({ todos: newArr });
+    return "This is an id we're looking for: " + id;
   };
 
   clearCompleted = () => {
@@ -39,13 +53,17 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList data={this.state.todos} />
+        <TodoList
+          data={this.state.todos}
+          toggleCompleted={this.toggleCompleted}
+        />
         <TodoForm
           submit={this.handleSubmit}
           updateValue={this.updateStateMessage}
           clearCompleted={this.clearCompleted}
         />
-        {console.log("This sate", this.state)}
+        {console.log("This state", this.state)}
+        {console.log("inpuy", document.getElementById("todoInput"))}
       </div>
     );
   }
