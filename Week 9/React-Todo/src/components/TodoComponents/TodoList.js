@@ -14,7 +14,6 @@ class TodoList extends React.Component {
       this.props.data.map(todo => {
         return (
           <Todo
-            // onClick={console.log(this.props.toggle(todo.id))}
             toggleCompleted={this.props.toggleCompleted}
             data={todo}
             key={todo.id}

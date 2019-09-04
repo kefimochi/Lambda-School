@@ -4,9 +4,6 @@ import TodoForm from "./components/TodoComponents/TodoForm";
 import "./components/CSS/index.css";
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
   constructor() {
     super();
     this.state = {
@@ -19,7 +16,6 @@ class App extends React.Component {
     let value = e.target.value;
     if (value !== null) {
       this.newValue = { target: value, id: Date.now(), completed: false };
-      console.log(this.newValue);
     }
   };
 
@@ -30,10 +26,7 @@ class App extends React.Component {
     });
   };
 
-  // Expects an object
   toggleCompleted = id => {
-    console.log("IT WORKS!!", id);
-
     let newArr = this.state.todos.map(element =>
       element.id === id
         ? { ...element, completed: !element.completed }
@@ -41,7 +34,6 @@ class App extends React.Component {
     );
 
     this.setState({ todos: newArr });
-    return "This is an id we're looking for: " + id;
   };
 
   clearCompleted = () => {
@@ -55,12 +47,12 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <TodoList
           data={this.state.todos}
+          clearCompleted={this.clearCompleted}
           toggleCompleted={this.toggleCompleted}
         />
         <TodoForm
-          submit={this.handleSubmit}
+          handleSubmit={this.handleSubmit}
           updateValue={this.updateStateMessage}
-          clearCompleted={this.clearCompleted}
         />
         {console.log("This state", this.state)}
         {console.log("inpuy", document.getElementById("todoInput"))}

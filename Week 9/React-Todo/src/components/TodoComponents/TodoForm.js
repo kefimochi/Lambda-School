@@ -7,7 +7,14 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.submit}>
+      <form
+        onSubmit={e => {
+          {
+            document.getElementById("todoInput").value = "";
+            return this.props.handleSubmit(e);
+          }
+        }}
+      >
         <input
           type="text"
           name="todo"
@@ -15,19 +22,12 @@ class TodoForm extends React.Component {
           placeholder="change state"
           onChange={this.props.updateValue}
         />
-        <button
-          onClick={(document.getElementById("todoInput").value = "")}
-          type="submit"
-        >
-          Add to the list
-        </button>
+        <button type="submit">Add to the list</button>
 
         <button type="button">Clear completed</button>
       </form>
     );
   }
 }
-
-// onclick={(document.getElementById("todoInput").value = "")}
 
 export default TodoForm;

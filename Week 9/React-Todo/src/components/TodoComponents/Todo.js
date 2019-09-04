@@ -7,7 +7,6 @@ class Todo extends React.Component {
 
   render() {
     let className = this.props.data.completed ? "active" : "";
-    console.log("THESE ARETHEPROPS W R LOOKING FOR", this.props.data.completed);
     return (
       <>
         <h4
