@@ -1,68 +1,75 @@
 import React from "react";
-import TodoList from "./components/TodoComponents/TodoList";
-import TodoForm from "./components/TodoComponents/TodoForm";
-import "./components/CSS/index.css";
+import UserList from "./components/userList";
+// import TodoForm from "./components/TodoComponents/TodoForm";
+import axios from "axios";
+import "./styles/index.css";
+import "./styles/all-users-container.css";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      users: []
     };
-    this.newValue = {};
   }
 
-  updateStateMessage = e => {
-    let value = e.target.value;
-    if (value !== null) {
-      this.newValue = { target: value, id: Date.now(), completed: false };
-    }
-  };
+  componentDidMount() {
+    axios
+      .get("https://api.github.com/search/users?q=kefi", {
+        method: "get"
+      })
+      .then(res => {
+        if (res.data.items.length > 0) {
+          res.data.items.forEach(user => {
+            axios.get(user.url, { mathod: "get" }).then(responseTwo => {
+              this.setState({ users: [...this.state.users, responseTwo.data] });
+            });
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.setState({
-      todos: [...this.state.todos, this.newValue]
-    });
-  };
+  getMoreDescriptiveUser(url) {
+    // Map over the existing array, overwrite users data
+  }
 
-  toggleCompleted = id => {
-    let newArr = this.state.todos.map(element =>
-      element.id === id
-        ? { ...element, completed: !element.completed }
-        : element
-    );
+  // function addUsersToDOM(users) {
+  //   console.log("USERTEMS", users.items);
+  //   users.items.forEach(person => {
+  //     // Prevents undefined profiles from showing
+  //     if (person === undefined) return;
+  //     // Shows small cards for all found users
+  //     extractUserObject(person);
+  //   });
+  // }
 
-    this.setState({ todos: newArr });
-  };
-
-  clearCompleted = () => {
-    let newArr = this.state.todos.filter(
-      element => element.completed === false
-    );
-
-    this.setState({ todos: newArr });
-  };
+  // function extractUserObject(user) {
+  //   axios
+  //     .get(user.url, {
+  //       method: "get"
+  //     })
+  //     .then(res => {
+  //       console.log("Res", res.data);
+  //       createUserComponent(res.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
-    return (
-      <div class="app-container">
-        <div class="app">
-          <h2>Welcome to your Todo App!</h2>
-          <TodoList
-            data={this.state.todos}
-            toggleCompleted={this.toggleCompleted}
-          />
-          <TodoForm
-            handleSubmit={this.handleSubmit}
-            updateValue={this.updateStateMessage}
-            clearCompleted={this.clearCompleted}
-          />
-          {console.log("This state", this.state)}
-          {console.log("inpuy", document.getElementById("todoInput"))}
+    if (this.state.users.length > 0) {
+      return (
+        <div className="container">
+          <UserList data={this.state.users} />
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <h2>Loading...</h2>;
+    }
   }
 }
 
