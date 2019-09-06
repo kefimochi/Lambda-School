@@ -1,15 +1,19 @@
 import React from "react";
 import * as rtl from "@testing-library/react";
-// import "@testing-library/jest-dom/extend-expect";
-// import "@testing-library/react/cleanup-after-each";
+import * as rtlfuck from "@testing-library/jest-dom";
+import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/react/cleanup-after-each";
 import PlayerCard from "../playerCard";
+import App from "../../App";
 
-test("Ball button is rendering", () => {
-  const container = rtl.render(<PlayerCard />);
-  //   const ball = container.queryByText(/Searches: 100/i);
-  console.log(container);
-  //   expect(ball).toBeTruthy();
+test("should have text [player name]", () => {
+  const app = rtl.render(<App />);
+  // findByText(/Alex Morgan/i);
+  console.log(app);
 });
+//   const ball = container.queryByText(/Searches: 100/i);
+// console.log(container);
+//   expect(ball).toBeTruthy();
 
 // describe("sum function", () => {
 //   it("sums two integers", () => {
