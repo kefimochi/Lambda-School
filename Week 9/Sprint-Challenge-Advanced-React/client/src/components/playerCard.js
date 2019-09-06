@@ -9,10 +9,10 @@ class PlayerCard extends React.Component {
     console.log("data", this.props.data);
     return (
       <div className="player">
-        <h3>{this.props.data.name}</h3>
+        <h2>{this.props.data.name}</h2>
         <div className="bottom">
-          <h5>{this.props.data.country}</h5>
-          <h5>{this.props.data.searches}</h5>
+          <h5>Country: {this.props.data.country}</h5>
+          <h5>Searches: {this.props.data.searches}</h5>
         </div>
       </div>
     );
