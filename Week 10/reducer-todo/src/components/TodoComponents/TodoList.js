@@ -10,12 +10,11 @@ class TodoList extends React.Component {
   }
 
   render() {
-    console.log("this props", this.props.data);
     return this.props.data ? (
       this.props.data.map(todo => {
         return (
           <Todo
-            toggleCompleted={this.props.toggleCompleted}
+            dispatch={this.props.dispatch}
             data={todo}
             key={todo.id}
             id={todo.id}

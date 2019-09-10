@@ -3,7 +3,17 @@ import React from "react";
 class TodoForm extends React.Component {
   constructor() {
     super();
+    this.newValue = {};
   }
+
+  updateStateMessage = e => {
+    let value = e.target.value;
+    console.log(value);
+    if (value !== null) {
+      this.newValue = { item: value, completed: false, id: Date.now() };
+      console.log(this.newValue);
+    }
+  };
 
   render() {
     return (
@@ -11,7 +21,11 @@ class TodoForm extends React.Component {
         onSubmit={e => {
           {
             document.getElementById("todoInput").value = "";
-            return this.props.handleSubmit(e);
+            e.preventDefault();
+            return this.props.dispatch({
+              type: "HANDLE-SUBMIT",
+              newValue: this.newValue
+            });
           }
         }}
       >
@@ -20,11 +34,18 @@ class TodoForm extends React.Component {
           name="todo"
           id="todoInput"
           placeholder="change state"
-          onChange={this.props.updateValue}
+          onChange={this.updateStateMessage}
         />
         <button type="submit">Add to the list</button>
 
-        <button onClick={this.props.clearCompleted} type="button">
+        <button
+          onClick={() => {
+            this.props.dispatch({
+              type: "CLEAR-COMPLETED"
+            });
+          }}
+          type="button"
+        >
           Clear completed
         </button>
       </form>

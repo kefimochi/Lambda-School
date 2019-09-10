@@ -12,7 +12,12 @@ class Todo extends React.Component {
         <h4
           className={className}
           data-roll={this.props.data.completed}
-          onClick={() => this.props.toggleCompleted(this.props.data.id)}
+          onClick={() =>
+            this.props.dispatch({
+              type: "TOGGLE-COMPLETED",
+              id: this.props.data.id
+            })
+          }
         >
           {this.props.data.item}
         </h4>
