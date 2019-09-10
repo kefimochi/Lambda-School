@@ -1,0 +1,33 @@
+h4.active {
+  text-decoration: line-through;
+}
+
+/* @import "../../../public/images/abstract.jpg"; */
+
+h4 {
+  margin: 0.5em;
+}
+
+body {
+  /* background: "images/abstract.jpg"; */
+  background: url("../../images/annie-spratt-1137632-unsplash.jpg");
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25em;
+  background: white;
+  height: 35em;
+}
