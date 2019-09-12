@@ -1,49 +1,47 @@
-import React from "react";
-import { newExpression } from "@babel/types";
+import { ADD_FEATURE, REMOVE_FEATURE } from "../actions/actions";
 
-export default function reducer(state, action) {
+const initialState = {
+  additionalPrice: 0,
+  car: {
+    price: 26395,
+    name: "2019 Ford Mustang",
+    image:
+      "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
+    features: []
+  },
+  store: [
+    { id: 1, name: "V-6 engine", price: 1500 },
+    { id: 2, name: "Racing detail package", price: 1500 },
+    { id: 3, name: "Premium sound system", price: 500 },
+    { id: 4, name: "Rear spoiler", price: 250 }
+  ]
+};
+
+function reducer(state = initialState, action) {
+  console.log(state);
   switch (action.type) {
-    case "MODIFY":
-      return action.newArr;
-    case "TOGGLE-COMPLETED":
-      return state.map(element =>
-        element.id === action.id
-          ? { ...element, completed: !element.completed }
-          : element
+    case ADD_FEATURE:
+      return {
+        ...state,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.feature]
+        },
+        additionalPrice: state.additionalPrice + action.feature.price
+      };
+    case REMOVE_FEATURE:
+      let newFeaturesList = state.car.features.filter(
+        element => element.id !== action.feature.id
       );
-    case "CLEAR-COMPLETED":
-      return state.filter(element => element.completed === false);
-    case "HANDLE-SUBMIT":
-      return [action.newValue, ...state];
+      console.log(newFeaturesList);
+      return {
+        ...state,
+        car: { ...state.car, features: newFeaturesList },
+        additionalPrice: state.additionalPrice - action.feature.price
+      };
     default:
       return state;
   }
 }
 
-export const toDoList = [
-  {
-    item: "Learn about reducers",
-    completed: false,
-    id: 3892987543
-  },
-  {
-    item: "Learn about react",
-    completed: true,
-    id: 3892987581
-  },
-  {
-    item: "Learn about sass",
-    completed: false,
-    id: 3292987584
-  },
-  {
-    item: "Learn about life",
-    completed: false,
-    id: 3892987580
-  },
-  {
-    item: "Learn about death",
-    completed: false,
-    id: 3898987589
-  }
-];
+export default reducer;
