@@ -9,7 +9,7 @@ export const getQuote = () => dispatch => {
   axios
     .get("https://api.quotable.io/random")
     .then(res => {
-      console.log("RESPONDSE", res.data);
+      console.log("RESPONSE", res.data);
       dispatch({ type: FETCH_QUOTE_SUCCESS, payload: res.data });
     })
     .catch(err => dispatch({ type: FETCH_QUOTE_FAIL, payload: err }));

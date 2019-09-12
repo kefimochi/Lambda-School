@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Raleway&display=swap");
 
 .background {
-  background-color: white;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -11,6 +10,7 @@
 
 .card {
   height: 30em;
+  border-radius: 0.7em;
   width: 40em;
   background-image: linear-gradient(
     to bottom,
@@ -25,26 +25,63 @@
 .top {
   width: 100%;
   height: 70%;
-  background-color: rgba($color: #000000, $alpha: 0.4);
+  padding: 4em;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  .author {
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.4em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.top-container {
+  height: 100%;
+  width: 100%;
+
+  h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1.8em;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+  }
+
+  img {
+    height: 3em;
+    width: 3em;
+  }
 }
 
 .bottom {
   width: 100%;
   height: 30%;
-  background-color: rgba($color: #000000, $alpha: 0.2);
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./images/bottom.svg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
 }
 
-.button {
-  height: 10em;
-  width: 10em;
-  border-radius: 10em;
+.buttonRound {
+  position: relative;
+  height: 4em;
+  top: -3em;
+  width: 4em;
+  background-color: white;
+  border-radius: 100em;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  align-items: center;
 
   img {
-    height: 80%;
-    width: 80%;
+    height: 30%;
+    width: 30%;
   }
 }
-
-// font-family: 'Raleway', sans-serif;
-// font-family: 'Dancing Script', cursive;
-// font-family: 'Great Vibes', cursive;
