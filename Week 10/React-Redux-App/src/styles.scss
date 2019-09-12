@@ -1,49 +1,50 @@
-html, body, #root {
-  height: 100%;
-}
-body {
-  background: #333;
-  margin: 0;
-  display: grid;
-  padding: 3em;
-  place-items: center;
-}
-.boxes {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
-  grid-template-rows: auto;
-}
-.box {
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Raleway&display=swap");
+
+.background {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  h1 {
-    font-size: 20px;
-    margin: 0 0 1rem 0;
-  }
-  .content {
-    padding-top: 1em;
-  }
-  ol {
-    margin-left: 0;
-    li {
-      align-items: center;
-      display: flex;
-      justify-content: flex-start;
-    }
-  }
+  justify-content: center;
+  align-items: center;
 }
+
+.card {
+  height: 30em;
+  width: 40em;
+  background-image: linear-gradient(
+    to bottom,
+    #440071,
+    #7b2784,
+    #ab4e98,
+    #d778ae,
+    #ffa5c8
+  );
+}
+
+.top {
+  width: 100%;
+  height: 70%;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+}
+
+.bottom {
+  width: 100%;
+  height: 30%;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
 .button {
-  background: hotpink;
-  border: 1px solid transparent;
-  color: white;
-  margin-right: 1em;
-  padding: .25em .75em;
-  transition: all .25s ease-in;
-  &:hover {
-    background: white;
-    border: 1px solid hotpink;
-    color: #333;
+  height: 10em;
+  width: 10em;
+  border-radius: 10em;
+
+  img {
+    height: 80%;
+    width: 80%;
   }
 }
+
+// font-family: 'Raleway', sans-serif;
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Great Vibes', cursive;

@@ -18,20 +18,20 @@ const initialState = {
 function reducer(state = initialState, action) {
   console.log(state);
   switch (action.type) {
-    case FETCH_POKEMON_START:
+    case FETCH_QUOTE_START:
       return {
         ...state,
         isFetching: true,
         error: ""
       };
-    case FETCH_POKEMON_SUCCESS:
+    case FETCH_QUOTE_SUCCESS:
       return {
         ...state,
-        pokemon: action.payload,
+        quote: { ...action.payload },
         isFetching: false,
         error: ""
       };
-    case FETCH_POKEMON_FAIL:
+    case FETCH_QUOTE_FAIL:
       return {
         ...state,
         error: action.payload
