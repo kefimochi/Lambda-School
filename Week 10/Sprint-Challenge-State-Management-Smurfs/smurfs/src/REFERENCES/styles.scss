@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Raleway&display=swap");
+
+.background {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.041);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 30em;
+  border-radius: 0.7em;
+  width: 40em;
+  background-image: linear-gradient(
+    to bottom,
+    #440071,
+    #7b2784,
+    #ab4e98,
+    #d778ae,
+    #ffa5c8
+  );
+
+  @media (max-width: 660px) {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.top {
+  width: 100%;
+  height: 70%;
+  padding: 4em;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  @media (max-width: 660px) {
+    height: auto;
+  }
+
+  @media (max-width: 400px) {
+    padding: 2em;
+    box-sizing: border-box;
+  }
+
+  .author {
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.4em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.top-container {
+  height: 100%;
+  width: 100%;
+
+  h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1.8em;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+
+    @media (max-width: 660px) {
+      margin-top: 1.5em;
+      font-size: 2em;
+    }
+    @media (max-width: 660px) {
+      font-size: 1.8em;
+    }
+  }
+
+  img {
+    height: 3em;
+    width: 3em;
+  }
+}
+
+.bottom {
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  position: absolute;
+  border-radius: 0.7em;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./images/bottom.svg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonRound {
+  position: relative;
+  height: 4em;
+  transition: all 0.15s ease-in;
+  top: -3em;
+  width: 4em;
+  background-color: white;
+  border-radius: 100em;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.15);
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  img {
+    height: 30%;
+    width: 30%;
+  }
+}
