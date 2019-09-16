@@ -1,8 +1,12 @@
-// Test away
-const dash = require("./Dashboard");
+import React from "react";
+import * as rtl from "react-testing-library";
+import Display from "../display/Display";
+import Controls from "../controls/Controls";
 
-describe("dashboard component", () => {
-  it("displays controls", () => {});
+test("Testing for displaying 'control' on dashboard", () => {
+  rtl.render(<Controls />);
+});
 
-  it("shows dispay", () => {});
+test("Testing for displaying 'display' on dashboard", () => {
+  rtl.render(<Display />);
 });
