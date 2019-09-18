@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import SmurfsList from "./smurfsList";
-import SmurfForm from "./smurfForm";
+import Login from "./login";
+import { Route, Link } from "react-router-dom";
+import PrivateRoute from "./privateRoute";
+import FriendsList from "./friendsList";
+import FriendsForm from "./friendForm";
 import "./App.css";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Friends App W/ Redux</h1>
-        {/* <SmurfForm /> */}
-        {/* <SmurfsList /> */}
+        <h3>Friends App W/ Redux</h3>
+        <Route exact path="/" component={Login} />
+        <PrivateRoute path="/friends" component={FriendsList} />
+        <PrivateRoute path="/create" component={FriendsForm} />
       </div>
     );
   }
