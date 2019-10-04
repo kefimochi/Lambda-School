@@ -1,0 +1,35 @@
+{
+  "name": "webapi-challenge",
+  "version": "1.0.0",
+  "description": "Web API Challenge",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LambdaSchool/Sprint-Challenge-Node-Express.git"
+  },
+  "keywords": [
+    "webapi",
+    "unit",
+    "challenge"
+  ],
+  "author": "Lambda School",
+  "bugs": {
+    "url": "https://github.com/LambdaSchool/Sprint-Challenge-Node-Express/issues"
+  },
+  "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Node-Express#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "knex": "^0.19.1",
+    "nodemon": "^1.19.3",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "knex-cleaner": "^1.2.1"
+  }
+}
