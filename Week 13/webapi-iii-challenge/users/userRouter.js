@@ -1,47 +1,95 @@
-const express = 'express';
+const express = require("express");
+const userRouter = express.Router();
 
-const router = express.Router();
+const userDb = require("./userDb");
+const postDb = require("../posts/postDb");
+const validatePost = require("../posts/middleware/validatePost");
+const validateUserId = require("./middleware/validateUserId");
+const validateUser = require("./middleware/validateUser");
 
-router.post('/', (req, res) => {
-
+userRouter.get("/", (req, res) => {
+  userDb
+    .get()
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ error: "The user information could not be retrieved." });
+    });
 });
 
-router.post('/:id/posts', (req, res) => {
-
+userRouter.get("/:id", validateUserId, (req, res) => {
+  try {
+    res.status(200).json(req.user);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "The user information could not be retrieved." });
+  }
 });
 
-router.get('/', (req, res) => {
-
+userRouter.get("/:id/posts", validateUserId, async (req, res) => {
+  try {
+    const posts = await userDb.getUserPosts(req.params.id);
+    posts.length > 0
+      ? res.status(200).json(posts)
+      : res.status(400).json({ message: "No posts for this user" });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "The user information could not be retrieved." });
+  }
 });
 
-router.get('/:id', (req, res) => {
-
+userRouter.post("/", validateUser, (req, res) => {
+  userDb
+    .insert(req.body)
+    .then(user => {
+      res.status(201).json(user);
+    })
+    .catch(error => {
+      res.status(500).json({
+        error: "There was an error while saving the user to the database"
+      });
+    });
 });
 
-router.get('/:id/posts', (req, res) => {
-
+userRouter.post("/:id/posts", validateUserId, validatePost, (req, res) => {
+  postDb
+    .insert({ ...req.body, user_id: req.params.id })
+    .then(post => {
+      res.status(201).json(post);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: "There was an error while adding post" });
+    });
 });
 
-router.delete('/:id', (req, res) => {
-
+userRouter.delete("/:id", validateUserId, (req, res) => {
+  userDb
+    .remove(req.params.id)
+    .then(user => {
+      res.status(204).json({});
+    })
+    .catch(error => {
+      res.status(500).json({ error: "The user could not be removed" });
+    });
 });
 
-router.put('/:id', (req, res) => {
-
+userRouter.put("/:id", validateUserId, validateUser, (req, res) => {
+  userDb
+    .update(req.params.id, req.body)
+    .then(user => {
+      res.status(200).json(user);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ error: "The user information could not be modified." });
+    });
 });
 
-//custom middleware
-
-function validateUserId(req, res, next) {
-
-};
-
-function validateUser(req, res, next) {
-
-};
-
-function validatePost(req, res, next) {
-
-};
-
-module.exports = router;
+module.exports = userRouter;
