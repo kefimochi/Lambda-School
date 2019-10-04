@@ -1,6 +1,7 @@
 require("dotenv").config();
 const server = require("./server.js");
 
+// Makes deployment at Heroku possible
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
