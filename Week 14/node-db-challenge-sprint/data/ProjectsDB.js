@@ -5,7 +5,9 @@ const db = knex(configOptions);
 module.exports = {
   find,
   findById,
+  findTasks,
   insert,
+  insertTask,
   update,
   remove
 };
@@ -19,9 +21,19 @@ function findById(id) {
   return db("projects").where({ id: Number(id) });
 }
 
+function findTasks(id) {
+  return db("tasks").where({ project_id: Number(id) });
+}
+
 function insert(project) {
   return db("projects")
     .insert(project)
+    .then(ids => ({ id: ids[0] }));
+}
+
+function insertTask(task) {
+  return db("tasks")
+    .insert(task)
     .then(ids => ({ id: ids[0] }));
 }
 
