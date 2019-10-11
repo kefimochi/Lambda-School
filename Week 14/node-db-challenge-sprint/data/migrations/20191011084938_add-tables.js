@@ -12,42 +12,61 @@ exports.up = function(knex) {
         .defaultTo(false)
         .notNullable();
     })
-    .createTable("ingredients", tbl => {
+    .createTable("resources", tbl => {
       tbl.increments();
-      tbl.string("ingredient_name", 128).notNullable();
+      tbl.string("name").unique();
+      tbl
+        .text("description", 300)
+        .notNullable()
+        .defaultTo("TBD");
     })
-    .createTable("recipes_ingredients_bridge", tbl => {
+    .createTable("tasks", tbl => {
+      tbl.increments();
       tbl
-        .integer("recipe_id")
+        .text("description", 300)
+        .notNullable()
+        .defaultTo("TBD");
+      tbl
+        .text("notes", 300)
+        .notNullable()
+        .defaultTo("TBD");
+      tbl
+        .boolean("completed")
+        .defaultTo(false)
+        .notNullable();
+    })
+    .createTable("todos", tbl => {
+      tbl
+        .integer("resource_id")
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("recipes")
+        .inTable("resources")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
       tbl
-        .integer("ingredient_id")
+        .integer("project_id")
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("ingredients")
+        .inTable("projects")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
       tbl
-        .integer("quantity")
+        .integer("task_id")
         .unsigned()
         .notNullable()
-        .defaultTo(1);
-      tbl
-        .string("units", 20)
-        .notNullable()
-        .defaultTo("g");
+        .references("id")
+        .inTable("tasks")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
     });
 };
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableIfExists("recipes_ingredients_bridge")
-    .dropTableIfExists("ingredients")
-    .dropTableIfExists("recipes");
+    .dropTableIfExists("todos")
+    .dropTableIfExists("tasks")
+    .dropTableIfExists("resources")
+    .dropTableIfExists("projects");
 };
