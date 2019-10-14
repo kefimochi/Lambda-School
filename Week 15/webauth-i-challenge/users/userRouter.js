@@ -1,4 +1,5 @@
-const db = require("../data/ProjectsDB");
+const db = require("../data/DBcongig");
+const bcrypt = require("bcryptjs");
 const express = require("express");
 
 const UserRouter = express.Router();
@@ -11,24 +12,31 @@ UserRouter.get("/users", (req, res) => {
     .catch(error => {
       res
         .status(500)
-        .json({ error: "The project information could not be retrieved." });
+        .json({ error: "The user information could not be retrieved." });
     });
 });
 
 UserRouter.post("/register", (req, res) => {
-  console.log(req.body);
-  if (!req.body.name || !req.body.completed) {
+  if (
+    !req.body.image_url ||
+    !req.body.name ||
+    !req.body.username ||
+    !req.body.password
+  ) {
     res.status(400).json({
-      errorMessage: "Please provide name and completed for the project."
+      errorMessage:
+        "Please provide username, name, password and an image url for the user."
     });
   } else {
-    db.insert(req.body)
+    req.body.password = bcrypt.hashSync(req.body.password, 12);
+
+    db.register(req.body)
       .then(account => {
         res.status(201).json(account);
       })
       .catch(error => {
         res.status(500).json({
-          error: "There was an error while saving the project to the database"
+          error: "There was an error while saving the user to the database"
         });
       });
   }
@@ -37,21 +45,21 @@ UserRouter.post("/register", (req, res) => {
 UserRouter.put("/:id", (req, res) => {
   if (!req.body.name || !req.body.completed) {
     res.status(400).json({
-      errorMessage: "Please provide name and completed for the project."
+      errorMessage: "Please provide name and completed for the user."
     });
   } else {
     db.update(req.params.id, req.body)
       .then(account => {
         if (!account) {
           res.status(404).json({
-            message: "The project with the specified ID does not exist."
+            message: "The user with the specified ID does not exist."
           });
         } else res.status(200).json(account);
       })
       .catch(error => {
         res
           .status(500)
-          .json({ error: "The project information could not be modified." });
+          .json({ error: "The user information could not be modified." });
       });
   }
 });
@@ -62,14 +70,14 @@ UserRouter.get("/logout", (req, res) => {
       console.log(account);
       if (!account) {
         res.status(404).json({
-          message: "The project with the specified ID does not exist."
+          message: "The user with the specified ID does not exist."
         });
       } else {
         res.status(204).send({});
       }
     })
     .catch(error => {
-      res.status(500).json({ error: "The project could not be removed" });
+      res.status(500).json({ error: "The user could not be removed" });
     });
 });
 

@@ -7,6 +7,6 @@ const server = express();
 
 server.use(express.json());
 server.use("/api", UsersRouter);
-server.use("/api/restricted", RestrictedRouter);
+// server.use("/api/restricted", RestrictedRouter);
 
 module.exports = server;
