@@ -4,6 +4,8 @@ const db = knex(configOptions);
 
 module.exports = {
   find,
+  findBy,
+  findSecret,
   register,
   login,
   update
@@ -12,6 +14,15 @@ module.exports = {
 function find() {
   console.log("Got to the find function");
   return db("users");
+}
+
+function findSecret() {
+  return db("restricted");
+}
+
+function findBy(str) {
+  console.log("str", str.toString());
+  return db("users").where({ username: str.toString() });
 }
 
 function register(resource) {
