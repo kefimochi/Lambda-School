@@ -1,9 +1,9 @@
 const db = require("../data/ProjectsDB");
 const express = require("express");
 
-const ProjectsRouter = express.Router();
+const UserRouter = express.Router();
 
-ProjectsRouter.get("/", (req, res) => {
+UserRouter.get("/users", (req, res) => {
   db.find()
     .then(account => {
       res.status(200).json(account);
@@ -15,44 +15,7 @@ ProjectsRouter.get("/", (req, res) => {
     });
 });
 
-ProjectsRouter.get("/:id", (req, res) => {
-  db.findById(req.params.id)
-    .then(account => {
-      if (!account) {
-        res.status(404).json({
-          message: "The project with the specified ID does not exist."
-        });
-      } else {
-        res.status(200).json(account);
-      }
-    })
-    .catch(error => {
-      res
-        .status(500)
-        .json({ error: "The project information could not be retrieved." });
-    });
-});
-
-ProjectsRouter.get("/:id/tasks", (req, res) => {
-  db.findTasks(req.params.id)
-    .then(account => {
-      console.log(account);
-      if (!account) {
-        res.status(404).json({
-          message: "The project with the specified ID does not exist."
-        });
-      } else {
-        res.status(200).json(account);
-      }
-    })
-    .catch(error => {
-      res
-        .status(500)
-        .json({ error: "The project information could not be retrieved." });
-    });
-});
-
-ProjectsRouter.post("/", (req, res) => {
+UserRouter.post("/register", (req, res) => {
   console.log(req.body);
   if (!req.body.name || !req.body.completed) {
     res.status(400).json({
@@ -71,26 +34,7 @@ ProjectsRouter.post("/", (req, res) => {
   }
 });
 
-ProjectsRouter.post("/:id/tasks", (req, res) => {
-  console.log(req.body);
-  if (!req.body.description || !req.body.completed) {
-    res.status(400).json({
-      errorMessage: "Please provide description and completed for the project."
-    });
-  } else {
-    db.insertTask(req.body)
-      .then(account => {
-        res.status(201).json(account);
-      })
-      .catch(error => {
-        res.status(500).json({
-          error: "There was an error while saving the project to the database"
-        });
-      });
-  }
-});
-
-ProjectsRouter.put("/:id", (req, res) => {
+UserRouter.put("/:id", (req, res) => {
   if (!req.body.name || !req.body.completed) {
     res.status(400).json({
       errorMessage: "Please provide name and completed for the project."
@@ -112,7 +56,7 @@ ProjectsRouter.put("/:id", (req, res) => {
   }
 });
 
-ProjectsRouter.delete("/:id", (req, res) => {
+UserRouter.get("/logout", (req, res) => {
   db.remove(req.params.id)
     .then(account => {
       console.log(account);
@@ -129,4 +73,4 @@ ProjectsRouter.delete("/:id", (req, res) => {
     });
 });
 
-module.exports = ProjectsRouter;
+module.exports = UserRouter;
