@@ -17,6 +17,10 @@ exports.up = function(knex) {
         .text("image_url", 150)
         .notNullable()
         .defaultTo("");
+      tbl
+        .text("department", 150)
+        .notNullable()
+        .defaultTo("");
     })
     .createTable("restricted", tbl => {
       tbl.increments();
