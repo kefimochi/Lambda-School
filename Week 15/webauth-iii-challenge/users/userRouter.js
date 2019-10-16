@@ -1,6 +1,7 @@
 const db = require("../data/DBcongig");
 const bcrypt = require("bcryptjs");
 const express = require("express");
+const jwt = require("jsonwebtoken");
 
 const restricted = require("./restrictedMiddleware");
 const UserRouter = express.Router();
@@ -54,8 +55,9 @@ UserRouter.post("/login", (req, res) => {
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(req.body.password, user.password)) {
+          const token = generateToken(user);
           req.session.user = user;
-          res.status(200).json({ message: "Successfully logged in" });
+          res.status(200).json({ message: "Successfully logged in", token });
         } else res.status(401).json({ message: "Invalid user credentials" });
       })
       .catch(err =>
@@ -99,5 +101,18 @@ UserRouter.get("/logout", (req, res) => {
     });
   }
 });
+
+function generateToken(user) {
+  const payload = {
+    subject: user.nickname,
+    name: user.name,
+    department: user.department
+  };
+  const secret = "idsfwgier37yehiwfe7rgfsdf73wupp999(^%$";
+  const options = {
+    expiresIn: "8h"
+  };
+  return jwt.sign(payload, secret, options);
+}
 
 module.exports = UserRouter;
