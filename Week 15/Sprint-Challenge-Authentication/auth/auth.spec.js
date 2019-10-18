@@ -34,4 +34,25 @@ describe("POST / login", () => {
   });
 });
 
-describe("POST / register", () => {});
+describe("POST / register", () => {
+  it("should return status 201 if the user successfully registered", async () => {
+    let response = await supertest(server)
+      .post("/api/auth/register")
+      .send({
+        username: "testUser",
+        password: "password"
+      });
+    expect(response.status).toBe(201);
+    let id = await db.findId("testUser");
+    await db.remove(id.id);
+  });
+  it("should return 500 if username is already in the database", async () => {
+    let response = await supertest(server)
+      .post("/api/auth/register")
+      .send({
+        username: "admin",
+        password: "123"
+      });
+    expect(response.status).toBe(500);
+  });
+});

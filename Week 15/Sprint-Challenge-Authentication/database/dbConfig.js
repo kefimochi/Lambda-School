@@ -5,10 +5,11 @@ const db = knex(configOptions);
 module.exports = {
   find,
   findBy,
-  findSecret,
+  findId,
   register,
   login,
-  update
+  update,
+  remove
 };
 
 function find() {
@@ -16,13 +17,16 @@ function find() {
   return db("users");
 }
 
-function findSecret() {
-  return db("restricted");
-}
-
 function findBy(str) {
   console.log("str", str.toString());
   return db("users").where({ username: str.toString() });
+}
+
+function findId(str) {
+  return db("users")
+    .where({ username: str.toString() })
+    .select("users.id")
+    .first();
 }
 
 function register(resource) {
@@ -39,4 +43,9 @@ function update(id, resource) {
   return db("users")
     .where("id", Number(id))
     .update(resource);
+}
+function remove(id) {
+  return db("users")
+    .where("id", Number(id))
+    .del();
 }
