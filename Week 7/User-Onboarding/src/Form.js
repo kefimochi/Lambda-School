@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 const Form = props => {
   const [user, setUser] = useState({ name: "", email: "", role: "" });
-  let userCount = 0;
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
